@@ -1,0 +1,1 @@
+<iframe src="{{ asset('banners/ford/ford.html') }}"></iframe>

@@ -1,0 +1,102 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            body {
+                margin: 0;
+                color: #FFF;
+                white-space: nowrap;
+            }
+            #wrapper {
+                width: 230px;
+                height: 148px;
+                background-image: url('fondo.jpg');
+                background-repeat: no-repeat;
+                background-color: #D7DFD4;
+                position: relative;
+                overflow: hidden;
+            }
+
+            #obj1,
+            #obj2,
+            #obj3 {
+                position: absolute;
+                opacity: 0;
+            }
+
+            #obj1 {
+                top: 0px;
+                left: 0px;
+                width: 230px;
+                transition: opacity 1s 1s;
+            }
+            #obj2 {
+                top: 0px;
+                left: 0px;
+                height: 148px;
+                transition: opacity 1s 2s, -moz-filter 0.8s 1.8s, -webkit-filter 0.8s 1.8s, filter 0.8s 1.8s;
+                -moz-filter: brightness(2000%);
+                -webkit-filter: brightness(2000%);
+                filter: brightness(2000%);
+            }
+            #obj3 {
+                top: 0px;
+                left: 0px;
+
+                transition: opacity 1s 4s;
+            }
+            #obj2.stage2 {
+                top: 0px;
+                left: 0px;
+                -webkit-filter: brightness(100%);
+            }
+
+            #obj1.stage2,
+            #obj2.stage2,
+            #obj3.stage2 {
+                opacity: 1;
+            }
+
+            #linea {
+                position: absolute;
+                bottom: 0;
+                height: 0;
+                width: 100%;
+                background-image: url('linea.png');
+                background-position: bottom;
+                transition: height 2s;
+            }
+            #linea.stage2 {
+                height: 148px;
+            }
+
+        </style>
+        <script>
+            s2time = 200;
+            setTimeout(function (){
+                var element = document.getElementById("wrapper");
+                element.className += " stage2";
+                var element = document.getElementById("linea");
+                element.className += " stage2";
+                var element = document.getElementById("obj1");
+                element.className += " stage2";
+                var element = document.getElementById("obj2");
+                element.className += " stage2";
+                var element = document.getElementById("obj3");
+                element.className += " stage2";
+            }, s2time);
+
+        </script>
+    </head>
+    <body>
+        <a href="" target="_blank">
+            <div id="wrapper">
+                <div id="linea"></div>
+                <!-- <img class="reveal" src="linea.png" alt=""> -->
+                <img id="obj1" src="texto1.png" alt="">
+                <img id="obj2" src="texto2.png" alt="">
+                <img id="obj3" src="logo.png" alt="">
+            </div>
+        </a>
+    </body>
+</html>
